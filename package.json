@@ -1,0 +1,19 @@
+{
+  "name": "eleventy-plugin-svg-contents",
+  "version": "0.5.0",
+  "description": "A plugin for 11ty to take a file and provide the contents of that file to a template (mostly used for SVGs)",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eleventy",
+    "eleventy-plugin"
+  ],
+  "author": {
+    "name": "Bryan Robinson",
+    "email": "bryan@codecontemporary.com",
+    "url": "https://bryanlrobinson.com"
+  },
+  "license": "MIT"
+}
