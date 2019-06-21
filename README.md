@@ -4,7 +4,7 @@ An [Eleventy](https://github.com/11ty/eleventy) plugin to grab the contents of a
 
 ## Installation
 
-Available on [npm](https://www.npmjs.com/package/@11ty/eleventy-plugin-rss).
+Available on [npm](https://www.npmjs.com/package/eleventy-plugin-svg-contents).
 
 ```
 npm install eleventy-plugin-svg-contents --save
