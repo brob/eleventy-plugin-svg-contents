@@ -1,8 +1,6 @@
+const cheerio = require('cheerio');
 const fs = require('fs');
-const jsdom = require('jsdom');
 const path = require('path');
-
-const { JSDOM } = jsdom;
 
 const defaults = {
   class: '',
@@ -21,12 +19,11 @@ class GetSVGContents {
       return svgContent;
     }
 
-    const dom = new JSDOM(svgContent);
-    const svg = dom.window.document.querySelector('svg');
+    const $ = cheerio.load(svgContent);
 
-    svg.classList.add(...this.options.class.split(' '));
+    $('svg').addClass(this.options.class);
 
-    return svg.outerHTML.toString('utf8');
+    return $.html('svg');
   }
 
   createSvg() {
