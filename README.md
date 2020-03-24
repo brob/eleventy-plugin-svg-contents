@@ -30,6 +30,12 @@ In your (Nunjucks or Liquid) templates, use the following syntax to grab the con
 
 _**Quick note:** You may need to pass another filter after to have this render as html. In Nunjucks, you'll add `| safe` to the end._
 
+You can append the `svg` class with the `class` option.
+
+```
+{{ 'path/to/file.svg' | svgContents(class = "extra-class-one extra-class-two") }}
+```
+
 ### Filters
 
 * `svgContents`: Grabs the xml from an SVG and passes it to your template. Voila! Instant embedded SVG from a file!

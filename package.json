@@ -7,6 +7,9 @@
     "eleventy",
     "eleventy-plugin"
   ],
+  "scripts": {
+    "lint:js": "npx eslint \"./src/**/*.js\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brob/eleventy-plugin-svg-contents.git"
@@ -22,6 +25,12 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^0.8.3"
+    "@11ty/eleventy": "^0.8.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1"
+  },
+  "dependencies": {
+    "jsdom": "^16.2.1"
   }
 }
