@@ -2,27 +2,21 @@ const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
 
-const defaults = {
-  class: '',
-};
-
 class GetSVGContents {
-  constructor(file = '', options = defaults) {
+  constructor(file = '', className) {
     this.file = file;
-    this.options = { ...defaults, ...options };
+    this.className = className;
   }
 
   appendClass() {
     const svgContent = this.getFileContents();
-
-    if (this.options.class === '') {
+    if (this.className === '') {
       return svgContent;
     }
 
     const $ = cheerio.load(svgContent);
 
-    $('svg').addClass(this.options.class);
-
+    $('svg').addClass(this.className);
     return $.html('svg');
   }
 
