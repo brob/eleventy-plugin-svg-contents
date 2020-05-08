@@ -22,6 +22,7 @@ module.exports = function(eleventyConfig) {
 
 ## Usage
 
+### Base usage
 In your (Nunjucks or Liquid) templates, use the following syntax to grab the contents from any SVG in your project path:
 
 ```
@@ -33,6 +34,8 @@ In your (Nunjucks or Liquid) templates, use the following syntax to grab the con
 ```
 
 _**Quick note:** You may need to pass another filter after to have this render as html. In Nunjucks, you'll add `| safe` to the end._
+
+### Adding a class to your SVG
 
 You can append the `svg` class with the `class` option.
 
