@@ -25,7 +25,11 @@ module.exports = function(eleventyConfig) {
 In your (Nunjucks or Liquid) templates, use the following syntax to grab the contents from any SVG in your project path:
 
 ```
+// nunjucks/liquid
 {{ 'path/to/file.svg' | svgContents }}
+
+// handlebars
+{{{svgContents 'path/to/file.svg' }}}
 ```
 
 _**Quick note:** You may need to pass another filter after to have this render as html. In Nunjucks, you'll add `| safe` to the end._
@@ -33,7 +37,16 @@ _**Quick note:** You may need to pass another filter after to have this render a
 You can append the `svg` class with the `class` option.
 
 ```
-{{ 'path/to/file.svg' | svgContents(class = "extra-class-one extra-class-two") }}
+// Nunjucks
+{{ 'path/to/file.svg' | svgContents("extra-class-one extra-class-two") }}
+
+// Liquid
+{{ 'path/to/file.svg' | svgContents: "extra-class-one extra-class-two" }}
+
+// Handlebars
+{{{svgContents 'path/to/file.svg' "extra-class-one extra-class-two" }}}
+
+
 ```
 
 ### Filters
