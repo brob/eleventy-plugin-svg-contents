@@ -25,10 +25,11 @@ describe('SVG Test', function() {
   });
   describe('Add Class', function() {
     it('Returns an SVG with the right class', function () {
-      const getSVGContents = new GetSVGContents('/sample/simple.svg', 'classname');
+      const className = 'classname'
+      const getSVGContents = new GetSVGContents('/sample/simple.svg', className);
       let svg = Cheerio.load(getSVGContents.getSvg());
-
-      console.log(svg);
-    })
+      let svgClass = svg('svg').attr('class')
+      assert.equal(svgClass, className)
+    });
   })
 });
