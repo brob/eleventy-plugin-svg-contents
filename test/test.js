@@ -23,4 +23,12 @@ describe('SVG Test', function() {
       assert.equal(svg.html, testSvg.html);
     });
   });
+  describe('Add Class', function() {
+    it('Returns an SVG with the right class', function () {
+      const getSVGContents = new GetSVGContents('/sample/simple.svg', 'classname');
+      let svg = Cheerio.load(getSVGContents.getSvg());
+
+      console.log(svg);
+    })
+  })
 });
