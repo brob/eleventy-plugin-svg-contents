@@ -48,8 +48,27 @@ You can append the `svg` class with the `class` option.
 
 // Handlebars
 {{{svgContents 'path/to/file.svg' "extra-class-one extra-class-two" }}}
+```
+
+### Using other SVG elements
+
+If you want to use an element selector other than SVG (or want to select a specific piece of an SVG) you can use an optional second argument to provide a selector for the element in your SVG file. Any selector strings will work (classes, ids, attr, element).
+
+Due to limitations of Liquid and Handlebars, you'll need to have a placeholder string for the optional class name argument.
 
 
+```
+// Nunjucks
+{{ 'path/to/file.svg' | svgContents("", "symbol") }}
+{{ 'path/to/file.svg' | svgContents("add-class", "#byId") }}
+
+// Liquid
+{{ 'path/to/file.svg' | svgContents: "", "symbol" }}
+{{ 'path/to/file.svg' | svgContents: "add-class", "#byId" }}
+
+// Handlebars
+{{{svgContents 'path/to/file.svg' "" "symbol" }}}
+{{{svgContents 'path/to/file.svg' "add-class" "#byId" }}}
 ```
 
 ### Filters

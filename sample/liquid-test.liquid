@@ -8,5 +8,6 @@
 </head>
 <body>
     {{ "/sample/simple.svg" | svgContents: "classname" | safe }}
+    {{ "/sample/symbol.svg" | svgContents: "classname", "symbol" | safe }}
 </body>
 </html>

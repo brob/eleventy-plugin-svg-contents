@@ -3,9 +3,10 @@ const fs = require('fs');
 const path = require('path');
 
 class GetSVGContents {
-  constructor(file = '', className) {
+  constructor(file = '', className, extractTag = 'svg') {
     this.file = file;
     this.className = className;
+    this.extractTag = extractTag;
   }
 
   appendClass() {
@@ -16,8 +17,8 @@ class GetSVGContents {
 
     const $ = cheerio.load(svgContent);
 
-    $('svg').addClass(this.className);
-    return $.html('svg');
+    $(this.extractTag).addClass(this.className);
+    return $.html(this.extractTag);
   }
 
   createSvg() {
