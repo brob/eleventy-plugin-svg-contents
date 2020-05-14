@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-svg-contents",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A plugin for 11ty to take an SVG and provide the contents of that file to a template",
   "main": ".eleventy.js",
   "keywords": [
@@ -8,6 +8,7 @@
     "eleventy-plugin"
   ],
   "scripts": {
+    "test": "mocha",
     "lint:js": "npx eslint \"./src/**/*.js\""
   },
   "repository": {
@@ -28,7 +29,8 @@
     "@11ty/eleventy": "^0.10.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.1"
+    "eslint-plugin-import": "^2.20.1",
+    "mocha": "^7.1.2"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3"
