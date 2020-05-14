@@ -6,13 +6,13 @@ An [Eleventy](https://github.com/11ty/eleventy) plugin to grab the contents of a
 
 Available on [npm](https://www.npmjs.com/package/eleventy-plugin-svg-contents).
 
-```
+```bash
 npm install eleventy-plugin-svg-contents --save
 ```
 
 Open up your Eleventy config file (probably `.eleventy.js`) and add the plugin:
 
-```
+```js
 const svgContents = require("eleventy-plugin-svg-contents");
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(svgContents);
@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
 ### Base usage
 In your (Nunjucks or Liquid) templates, use the following syntax to grab the contents from any SVG in your project path:
 
-```
+```html
 // nunjucks/liquid
 {{ 'path/to/file.svg' | svgContents }}
 
@@ -39,7 +39,7 @@ _**Quick note:** You may need to pass another filter after to have this render a
 
 You can append the `svg` class with the `class` option.
 
-```
+```html
 // Nunjucks
 {{ 'path/to/file.svg' | svgContents("extra-class-one extra-class-two") }}
 
@@ -57,7 +57,7 @@ If you want to use an element selector other than SVG (or want to select a speci
 Due to limitations of Liquid and Handlebars, you'll need to have a placeholder string for the optional class name argument.
 
 
-```
+```html
 // Nunjucks
 {{ 'path/to/file.svg' | svgContents("", "symbol") }}
 {{ 'path/to/file.svg' | svgContents("add-class", "#byId") }}
