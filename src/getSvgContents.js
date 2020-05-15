@@ -1,7 +1,12 @@
 const cheerio = require('cheerio');
 const fs = require('fs');
 const path = require('path');
+const options = {
+  xml: {
+    recognizeSelfClosing: true
+  }
 
+}
 class GetSVGContents {
   constructor(file = '', className, extractTag = 'svg') {
     this.file = file;
@@ -11,7 +16,9 @@ class GetSVGContents {
 
   appendClass() {
     const svgContent = this.getFileContents();
-    const $ = cheerio.load(svgContent);
+    const $ = cheerio.load(svgContent, {
+      xmlMode: true
+    });
 
     if (this.className === '') {
       return $.html(this.extractTag);
