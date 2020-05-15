@@ -7,7 +7,7 @@
     <title>Test for SVG Contents</title>
 </head>
 <body>
-    {{ "/sample/simple.svg" | svgContents("classname") | safe }}
-    {{ "/sample/simple.svg" | svgContents | safe }}
+    {{ "/sample/symbol.svg" | svgContents("", "symbol") | safe }}
+    {{ "/sample/simple.svg" | svgContents('class') | safe }}
 </body>
 </html>

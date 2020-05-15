@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-svg-contents",
-  "version": "0.6.2",
+  "version": "0.7.2-beta.2",
   "description": "A plugin for 11ty to take an SVG and provide the contents of that file to a template",
   "main": ".eleventy.js",
   "keywords": [
