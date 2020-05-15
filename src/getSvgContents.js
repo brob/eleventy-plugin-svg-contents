@@ -11,11 +11,12 @@ class GetSVGContents {
 
   appendClass() {
     const svgContent = this.getFileContents();
+    const $ = cheerio.load(svgContent);
+
     if (this.className === '') {
-      return svgContent;
+      return $.html(this.extractTag);
     }
 
-    const $ = cheerio.load(svgContent);
 
     $(this.extractTag).addClass(this.className);
     return $.html(this.extractTag);

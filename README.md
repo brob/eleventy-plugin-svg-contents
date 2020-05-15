@@ -1,6 +1,6 @@
 # eleventy-plugin-svg-contents
 
-An [Eleventy](https://github.com/11ty/eleventy) plugin to grab the contents of an SVG file to allow for embedding in your template with all the power of SVG.
+An [Eleventy](https://github.com/11ty/eleventy) universal plugin to grab the contents of an SVG file to allow for embedding in your template with all the power of SVG.
 
 ## Installation
 
@@ -23,7 +23,7 @@ module.exports = function(eleventyConfig) {
 ## Usage
 
 ### Base usage
-In your (Nunjucks or Liquid) templates, use the following syntax to grab the contents from any SVG in your project path:
+In your (Nunjucks, Liquid or Handlebars) templates, use the following syntax to grab the contents from any SVG in your project path:
 
 ```html
 // nunjucks/liquid
