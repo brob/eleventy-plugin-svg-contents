@@ -40,9 +40,7 @@ class GetSVGContents {
       throw new Error('eleventy-plugin-svg-contents requires a filetype of svg');
     }
 
-    const relativeFilePath = `.${this.file}`;
-
-    const data = fs.readFileSync(relativeFilePath, (err, contents) => {
+    const data = fs.readFileSync(this.file, (err, contents) => {
       if (err) {
         throw new Error(err);
       }
